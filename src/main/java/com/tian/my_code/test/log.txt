@@ -1,0 +1,79 @@
+Classfile /D:/workspace/my_code/src/main/java/com/tian/my_code/test/JvmCodeDemo.class
+  Last modified 2020-11-8; size 419 bytes
+  MD5 checksum 3800b65c0afcca596e59f04ce689ab82
+public class com.tian.my_code.test.JvmCodeDemo
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #2.#18         // java/lang/Object."<init>":()V
+   #2 = Class              #19            // java/lang/Object
+   #3 = Class              #20            // com/tian/my_code/test/JvmCodeDemo
+   #4 = Utf8               <init>
+   #5 = Utf8               ()V
+   #6 = Utf8               Code
+   #7 = Utf8               LocalVariableTable
+   #8 = Utf8               this
+   #9 = Utf8               Lcom/tian/my_code/test/JvmCodeDemo;
+  #10 = Utf8               testGC
+  #11 = Utf8               ()Ljava/lang/Object;
+  #12 = Utf8               op1
+  #13 = Utf8               I
+  #14 = Utf8               op2
+  #15 = Utf8               obj
+  #16 = Utf8               Ljava/lang/Object;
+  #17 = Utf8               result
+  #18 = NameAndType        #4:#5          // "<init>":()V
+  #19 = Utf8               java/lang/Object
+  #20 = Utf8               com/tian/my_code/test/JvmCodeDemo
+{
+  public com.tian.my_code.test.JvmCodeDemo();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/tian/my_code/test/JvmCodeDemo;
+
+  public java.lang.Object testGC();
+    descriptor: ()Ljava/lang/Object;
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=5, args_size=1
+	     //常量10推送到操作数栈栈顶
+         0: bipush        10
+		 //将栈顶int型数值存入第二个本地变量 op1
+         2: istore_1
+		 //将int型3推送至操作数栈栈顶
+         3: iconst_3
+		 //将栈顶int型数值存入第三个个本地变量 op2
+         4: istore_2
+		 //创建一个对象，并将其引用值压入栈顶
+         5: new           #2                  // class java/lang/Object
+		 //复制栈顶元素（对象的引用
+         8: dup
+		 //调用Object的构造方法
+         9: invokespecial #1                  // Method java/lang/Object."<init>":()V
+		 //将栈顶引用型数值存入第四个本地变量
+        12: astore_3
+		//将第四个引用类型本地变量推送至栈顶
+        13: aload_3
+		//将栈顶引用型数值存入指定本地变量
+        14: astore        4
+		//将指定的引用类型本地变量推送至栈顶
+        16: aload         4
+		//从当前方法返回对象引用
+        18: areturn
+	  //本地变量表
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      19     0  this   Lcom/tian/my_code/test/JvmCodeDemo;
+            3      16     1   op1   I
+            5      14     2   op2   I
+           13       6     3   obj   Ljava/lang/Object;
+           16       3     4 result   Ljava/lang/Object;
+}
