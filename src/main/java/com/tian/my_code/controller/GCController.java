@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
- *
  * @author 田维常
  * @version 1.0
  * @date 2020/11/8 15:46
@@ -16,17 +14,19 @@ import java.util.List;
 @RestController
 public class GCController {
 
-    List<String> strings = new ArrayList<>();
+    List<Object> strings = new ArrayList<>();
 
     @GetMapping("/gc")
     public String addObject() {
+        System.out.println("-------gc-------");
         for (int i = 0; i < 1000000; i++){
             try {
-                Thread.sleep(200);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            strings.add("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            int [] a=new int[50000];
+            strings.add(a);
         }
         return "ok";
     }
