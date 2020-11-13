@@ -8,9 +8,11 @@ package com.tian.my_code.test;
  */
 public class IntegerDemo {
     public static void main(String[] args) {
+
         Integer a = new Integer(128);
         Integer b = Integer.valueOf(128);
         Integer c = 128;
+
         System.out.println(a.equals(b));
         System.out.println(a.equals(c));
         System.out.println(b.equals(c));
